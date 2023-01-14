@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Tik-Tack-Toe</title>
+</head>
+<body onload="startUp()">
+<div class = "container">
+
+    <div id = "centerButton">
+      <button onclick="xFunction();">x</button>
+      <button onclick="oFunction()">o</button>
+    </div>
+    <div id = "demo"></div>
+    <div class="game-board">
+      <div onclick="red();this.onclick=null;" id="box"></div>
+      <div onclick="red1();this.onclick=null;" id="box1"></div>
+      <div onclick="red2();this.onclick=null;" id="box2"></div>
+      <div onclick="red3();this.onclick=null;" id="box3"></div>
+      <div onclick="red4();this.onclick=null;" id="box4"></div>
+      <div onclick="red5();this.onclick=null;" id="box5"></div>
+      <div onclick="red6();this.onclick=null;" id="box6"></div>
+      <div onclick="red7();this.onclick=null;" id="box7"></div>
+      <div onclick="red8();this.onclick=null;"id="box8"></div>
+    </div>
+</div>
+</div>
+
+
+  
+</body>
+
+</html>
+<script>
+
+const board1 = ['x',0,0,0,'x',0,0,0,'x'];
+const board = [0,0,0,0,0,0,0,0,0];
+function startUp(){
+  alert("Please choose either 'X' or 'O'");
+  
+  
+}
+function xFunction() {
+  player = "x";
+  document.getElementById("demo").innerHTML = "You chose " +player;
+  url = "url('x.png')"
+}
+function oFunction() {
+  player = "o";
+  url = "url('o.webp')"
+  document.getElementById("demo").innerHTML = "You chose "+player;
+  
+}
+function red(){
+  document.getElementById("box").style.backgroundColor = "#f3f3f3";
+  document.getElementById("box").style.backgroundImage = url;
+  document.getElementById("box").style.backgroundSize="200px 200px";
+  board[0] = player;
+  console.log(board)
+  determine();
+}
+function red1(){
+  document.getElementById("box1").style.backgroundColor = "#f3f3f3";
+  document.getElementById("box1").style.backgroundImage = url;
+  document.getElementById("box1").style.backgroundSize="200px 200px";
+  board[1] = player;
+  console.log(board)
+  determine();
+}
+function red2(){
+  document.getElementById("box2").style.backgroundColor = "#f3f3f3";
+  document.getElementById("box2").style.backgroundImage = url;
+  document.getElementById("box2").style.backgroundSize="200px 200px";
+  board[2] = player;
+  console.log(board)
+  determine();
+}
+function red3(){
+  document.getElementById("box3").style.backgroundColor = "#f3f3f3";
+  document.getElementById("box3").style.backgroundImage = url;
+  document.getElementById("box3").style.backgroundSize="200px 200px";
+  board[3] = player;
+  console.log(board)
+  determine();
+}
+function red4(){
+  document.getElementById("box4").style.backgroundColor = "#f3f3f3";
+  document.getElementById("box4").style.backgroundImage = url;
+  document.getElementById("box4").style.backgroundSize="200px 200px";
+  board[4] = player;
+  console.log(board)
+  determine();
+}
+function red5(){
+  document.getElementById("box5").style.backgroundColor = "#f3f3f3";
+  document.getElementById("box5").style.backgroundImage = url;
+  document.getElementById("box5").style.backgroundSize="200px 200px";
+  board[5] = player;
+  console.log(board)
+  determine();
+}
+function red6(){
+  document.getElementById("box6").style.backgroundColor = "#f3f3f3";
+  document.getElementById("box6").style.backgroundImage = url;
+  document.getElementById("box6").style.backgroundSize="200px 200px";
+  board[6] = player;
+  console.log(board)
+  determine();
+}
+function red7(){
+  document.getElementById("box7").style.backgroundColor = "#f3f3f3";
+  document.getElementById("box7").style.backgroundImage = url;
+  document.getElementById("box7").style.backgroundSize="200px 200px";
+  board[7] = player;
+  console.log(board)
+  determine();
+}
+function red8(){
+  document.getElementById("box8").style.backgroundColor = "#f3f3f3";
+  document.getElementById("box8").style.backgroundImage = url;
+  document.getElementById("box8").style.backgroundSize="200px 200px";
+  board[8] = player;
+  console.log(board)
+  determine();
+  
+}
+  //xxx xxx xxx
+
+  //winning array in terms of x
+  //xxx top/bottom row horizontal xxx****** or ******xxx
+  
+
+  //xoo diagonal 1: x***x***x
+  //oxo
+  //oox 
+
+  //oox diagonal 2: **x*x*x**
+  //oxo
+  //xoo
+
+  //xoo verticle left: x**x**x**
+  //xoo
+  //xoo
+
+  //oxo verticle center: *x**x**x*
+  //oxo
+  //oxo
+
+  //oox verticle right: **x**x**x
+  //oox
+  //oox
+function determine(){
+  //vertical row
+  if(board[0]== player && board[1] == player && board[2]==player){
+    console.log(+player+" is WINNER");
+  }
+  if(board[0]== player && board[4] == player && board[8]==player){
+    console.log(+player+" is WINNER");
+  }
+  if(board[0]== player && board[3] == player && board[6]==player){
+    console.log(+player+" is WINNER");
+  }
+  if(board[1]== player && board[4] == player && board[7]==player){
+    console.log(+player+" is WINNER");
+  }
+  if(board[2]== player && board[5] == player && board[8]==player){
+    console.log(+player+" is WINNER");
+  }
+  if(board[3]== player && board[4] == player && board[5]==player){
+    console.log(+player+" is WINNER");
+  }
+  if(board[6]== player && board[7] == player && board[8]==player){~
+    console.log(+player+" is WINNER");
+  }
+  if(board[2]== player && board[4] == player && board[6]==player){
+    console.log(+player+" is WINNER");
+  }
+  
+}
+
+
+</script>
